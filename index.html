@@ -25,11 +25,12 @@
   }
   header h1 {
     margin: 0 0 10px;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
+    font-weight: 700;
   }
   header p {
-    font-size: 1.15rem;
-    margin: 5px 0;
+    font-size: 1.2rem;
+    margin: 8px 0;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -39,87 +40,138 @@
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 20px;
+    gap: 22px;
     max-width: 1000px;
     margin: 40px auto 20px;
     padding: 0 20px;
   }
   .gallery img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .gallery img:hover {
+  .gallery img:hover,
+  .gallery img:focus {
     transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    outline: none;
+  }
+
+  /* Buttons Container */
+  .button-container {
+    margin: 35px 0 50px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
   }
 
   /* WhatsApp Button */
-  .button-container {
-    margin: 30px 0 60px;
-  }
   .whatsapp-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background-color: #25D366;
     color: #fff;
-    padding: 16px 32px;
-    font-size: 1.3rem;
+    padding: 18px 36px;
+    font-size: 1.35rem;
     font-weight: 700;
-    border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    border-radius: 60px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.25s ease;
+    user-select: none;
   }
   .whatsapp-button:hover,
   .whatsapp-button:focus {
     background-color: #1ebe57;
-    transform: scale(1.05);
+    transform: scale(1.07);
+    outline: none;
+  }
+  .whatsapp-button svg {
+    margin-right: 12px;
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Facebook Button */
+  .facebook-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1877F2;
+    color: #fff;
+    padding: 18px 36px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    border-radius: 60px;
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.25s ease;
+    user-select: none;
+  }
+  .facebook-button:hover,
+  .facebook-button:focus {
+    background-color: #145dbf;
+    transform: scale(1.07);
+    outline: none;
+  }
+  .facebook-button svg {
+    margin-right: 12px;
+    width: 26px;
+    height: 26px;
   }
 
   /* Winner Section */
   #winner-announcement {
-    max-width: 650px;
-    margin: 50px auto 0;
+    max-width: 680px;
+    margin: 60px auto 0;
     background: #e0f2f1;
-    border-radius: 12px;
-    padding: 30px 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 36px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
   #winner-announcement h2 {
     color: #00796b;
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.3rem;
+    margin-bottom: 18px;
+    font-weight: 700;
   }
   #winner-announcement p {
-    font-size: 1.15rem;
-    margin: 10px 0;
+    font-size: 1.2rem;
+    margin: 12px 0;
   }
   #winner-code {
-    font-weight: 700;
+    font-weight: 800;
     color: #004d40;
-    font-size: 1.6rem;
+    font-size: 1.75rem;
+    letter-spacing: 1.2px;
   }
 
   /* Footer */
   footer {
-    margin-top: 60px;
-    font-size: 0.9rem;
+    margin-top: 80px;
+    font-size: 1rem;
     color: #666;
+    user-select: none;
   }
 
   /* Responsive tweaks */
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     header h1 {
-      font-size: 1.8rem;
+      font-size: 2.1rem;
     }
-    .whatsapp-button {
-      padding: 14px 26px;
-      font-size: 1.1rem;
+    header p {
+      font-size: 1rem;
     }
     .gallery img {
-      height: 140px;
+      height: 150px;
+    }
+    .whatsapp-button,
+    .facebook-button {
+      padding: 14px 28px;
+      font-size: 1.1rem;
     }
   }
 </style>
@@ -137,33 +189,31 @@
   <img src="images/narmada1.jpg" alt="Luxury apartment interior" />
   <img src="images/narmada2.jpg" alt="Swimming pool" />
   <img src="images/narmada3.jpg" alt="Lounge area" />
-<img src="images/narmada4.jpg" alt="Lounge area" />
+  <img src="images/narmada4.jpg" alt="Terrace view" />
 </section>
 
-<div class="button-container">
+<div class="button-container" role="group" aria-label="Giveaway participation and follow buttons">
   <a
     href="https://wa.me/23058257539?text=Hi%2C%20I%20want%20to%20enter%20the%20giveaway.%20My%20name%20is%20"
     class="whatsapp-button"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Enter giveaway via WhatsApp"
-    >
+  >
+    <!-- WhatsApp Icon SVG -->
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="#fff">
+      <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.1.55 4.1 1.6 5.88L0 24l6.4-1.6a11.94 11.94 0 005.6 1.44c6.63 0 12-5.37 12-12 0-3.21-1.25-6.21-3.48-8.36zM12 21.6a9.55 9.55 0 01-4.91-1.46l-.35-.21-3.8 1 1-3.68-.23-.37A9.45 9.45 0 012.4 12c0-5.16 4.2-9.36 9.36-9.36a9.33 9.33 0 016.63 2.75 9.34 9.34 0 002.73 6.62c0 5.15-4.2 9.35-9.36 9.35zm5.31-7.5c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.67.15s-.77.95-.94 1.15-.35.22-.64.08a7.53 7.53 0 01-2.22-1.3 8.38 8.38 0 01-1.55-1.92c-.16-.29-.02-.45.13-.6.13-.13.29-.33.43-.5a1.49 1.49 0 00.22-.38.37.37 0 00-.02-.36c-.07-.17-.68-1.63-.93-2.23-.24-.58-.49-.5-.67-.51-.18-.01-.39-.01-.6-.01s-.56.08-.85.4c-.29.31-1.12 1.1-1.12 2.68 0 1.57 1.15 3.1 1.31 3.32.16.22 2.26 3.45 5.49 4.83a19.1 19.1 0 002.46.89c1.03.4 1.76.34 2.41.21a3.88 3.88 0 001.4-.9 4.93 4.93 0 001.7-3.04c.01-.29.01-.5-.21-.64z"/>
+    </svg>
     📲 Enter Giveaway via WhatsApp
   </a>
-</div>
 
-<section id="winner-announcement" aria-live="polite" aria-atomic="true" role="region" aria-label="Giveaway winner announcement">
-  <h2>🎉 Giveaway Winner Announcement 🎉</h2>
-  <p>Thank you to everyone who entered our Grand Baie Day Pass giveaway by <strong>Super Deals Mauritius Co Ltd</strong>.</p>
-  <p style="margin-top: 20px;">
-    The winner is entry code: <span id="winner-code">[Winner code will be announced here on 14 July,On FACEBOOK]</span>
-  </p>
-  <p>We will contact the winner directly via WhatsApp and the code will show here.</p>
-</section>
-
-<footer>
-  &copy; 2025 Super Deals Mauritius Co Ltd. All rights reserved.
-</footer>
-
-</body>
-</html>
+  <a
+    href="https://www.facebook.com/superdeals.mu/"
+    class="facebook-button"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Follow Super Deals Mauritius on Facebook"
+  >
+    <!-- Facebook Icon SVG -->
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="#fff">
+      <path d="
